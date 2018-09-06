@@ -101,7 +101,14 @@ class DashboardController extends UserController
                 ];
         }
 
-        return view('customers.index', compact('data'));
+        if (isset($this->user->id)) {
+            return view('customers.index', compact('data'));
+        }
+        else {
+            return view('site.index');
+        }
+
+
 
     }
 }

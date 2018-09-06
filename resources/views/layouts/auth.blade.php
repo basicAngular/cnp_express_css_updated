@@ -18,9 +18,7 @@
 <body id="sign-in">
 <div class="app" id="app">
     <!-- ############ LAYOUT START-->
-
     <!-- ############ LAYOUT END-->
-
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 signin-form">

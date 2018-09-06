@@ -1,5 +1,4 @@
 @extends('layouts.user')
-
 {{-- Web site Title --}}
 @section('title')
     {{ $title }}

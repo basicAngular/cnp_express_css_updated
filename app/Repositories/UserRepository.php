@@ -4,7 +4,6 @@ use App\Models\User;
 use Prettus\Repository\Contracts\RepositoryInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
-
 /**
  * Interface UserRepository
  * @package app\Repositories
@@ -13,9 +12,9 @@ interface UserRepository extends RepositoryInterface
 {
     public function getUser();
 
-    public function getUserByType($userType);
-    
     public function getAll();
+
+    public function getUserByUserType($userType);
 
     public function getAllNew();
 

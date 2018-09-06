@@ -54,5 +54,5 @@ return [
     'broker' => 'Broker',
     'add_admin' => 'Add Admin',
     'add_client' => 'Add Client',
-    'add' => 'add_broker',
+    'add' => 'add_broker'
 ];

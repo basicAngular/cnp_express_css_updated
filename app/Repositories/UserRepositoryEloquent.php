@@ -25,6 +25,12 @@ class UserRepositoryEloquent extends BaseRepository implements UserRepository
         return Sentinel::getUser();
     }
 
+
+    public function getUserByUserType($userType)
+    {
+        return User::where('user_type', $userType);
+    }
+
     public function getStaff()
     {
         $user = User::find(Sentinel::getUser()->id);
@@ -51,14 +57,6 @@ class UserRepositoryEloquent extends BaseRepository implements UserRepository
             return $staffs;
         }
 
-    }
-
-    /*get user by user type edit by varunYog */
-
-    public function getUserByType($user_type)
-    {
-        $users = User::where('user_type', $user_type);
-        return $users;
     }
 
     public function getCustomers()
@@ -152,6 +150,7 @@ class UserRepositoryEloquent extends BaseRepository implements UserRepository
     public function getAllForCustomer()
     {
         $models = $this->model;
+
         return $models;
     }
     public function getUsersAndStaffs()

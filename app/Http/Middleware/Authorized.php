@@ -27,7 +27,6 @@ class Authorized
                     (Sentinel::inRole('staff') && ($permission==null || $user->authorized($permission))))) {
             return $next($request);
         }
-
         return redirect()->back()->withErrors(['message' => 'Permission denied']);
     }
 }

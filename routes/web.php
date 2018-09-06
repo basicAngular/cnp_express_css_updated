@@ -11,6 +11,13 @@ Route::pattern('id', '[0-9]+');
 
 /******************   APP routes  ********************************/
 
+Route::group(['before' => 'auth'], function () {
+    Route::get('site', 'SiteController@index');
+    Route::get('about', 'SiteController@about');
+    Route::post('contact', 'SiteController@contact');
+});
+
+
 Route::get('/', 'Users\DashboardController@index');
 Route::get('home', 'Users\DashboardController@index');
 Route::get('invite/{slug3}', 'AuthController@getSignup');
@@ -32,18 +39,15 @@ Route::group(array('middleware' => ['sentinel', 'xss_protection']), function () 
     Route::get('account', 'AuthController@getAccount');
     Route::put('account/{user}', 'AuthController@postAccount');
 });
-Route::group(array('middleware' => ['sentinel', 'admin', 'xss_protection'], 'namespace' => 'Users'), function () {
 
+Route::group(array('middleware' => ['sentinel', 'admin', 'xss_protection'], 'namespace' => 'Users'), function () {
     Route::get('setting', 'SettingsController@index');
     Route::post('setting', 'SettingsController@update');
-
     Route::post('support/send_support', 'MailboxController@sendSupport');
     Route::post('support/send_support_replay', 'MailboxController@sendSupportReplay');
     Route::get('support', 'MailboxController@support');
-
     Route::group(['prefix' => 'option'], function () {
         Route::get('data/{slug2}', 'OptionController@data');
-
         Route::get('data', 'OptionController@data');
         Route::get('{option}/show', 'OptionController@show');
         Route::get('{option}/delete', 'OptionController@delete');
@@ -62,7 +66,6 @@ Route::group(array('middleware' => ['sentinel', 'admin'], 'namespace' => 'Users'
 });
 
 Route::group(array('middleware' => ['sentinel', 'authorized', 'xss_protection'], 'namespace' => 'Users'), function () {
-
     Route::group(['prefix' => 'salesteam'], function () {
         Route::get('data', 'SalesteamController@data');
         Route::get('import', 'SalesteamController@getImport');
