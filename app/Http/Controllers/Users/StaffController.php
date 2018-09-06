@@ -128,25 +128,18 @@ class StaffController extends UserController
         if ($request->hasFile('user_avatar_file')) {
             $file = $request->file('user_avatar_file');
             $file = $this->userRepository->uploadAvatar($file);
-
             $request->merge([
                 'user_avatar' => $file->getFileInfo()->getFilename(),
             ]);
-
             $this->generateThumbnail($file);
         }
-
         $user = Sentinel::registerAndActivate($request->only('first_name', 'last_name', 'email', 'password'));
-
         $role = Sentinel::findRoleBySlug('staff');
         $role->users()->attach($user);
-
         $user = $this->userRepository->find($user->id);
-
         foreach ($request->get('permissions', []) as $permission) {
             $user->addPermission($permission);
         }
-
         $user->user_id = $this->user->id;
         $user->phone_number = $request->phone_number;
         $user->user_avatar = $request->user_avatar;
@@ -155,13 +148,15 @@ class StaffController extends UserController
         if ($request->user_type =='1') {
             return redirect("staff/admin");
         }
-        if ($request->user_type =='2') {
+        elseif ($request->user_type =='2') {
             return redirect("staff/broker");
         }
-        if ($request->user_type =='3') {
+        elseif ($request->user_type =='3') {
             return redirect("staff/client");
         }
-
+        else {
+            return redirect("staff");
+        }
     }
 
 
