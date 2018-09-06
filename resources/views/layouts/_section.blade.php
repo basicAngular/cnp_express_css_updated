@@ -7,7 +7,7 @@
                 </div>
                 <div class="pull-right">
                     <ul class="list-inline">
-                        <li><i class="fa fa-envelope" aria-hidden="true"></i> sales@tradelineking.com</li>
+                        <li><i class="fa fa-envelope" aria-hidden="true"></i> {{ Settings::get('site_email') }} </li>
                         <li>Welcome to <strong>{{ Settings::get('site_name') }}</strong> </li>
                         <li class="nav-item dropdown">
                             <span data-toggle="dropdown" class=" dropdown-toggle custom-caret caret "></span>

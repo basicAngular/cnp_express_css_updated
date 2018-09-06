@@ -354,17 +354,15 @@
                 <!-- Form Actions -->
                 <div class="form-group">
                     <div class="controls">
-
                         <button type="submit" class="btn btn-success"><i
                                     class="fa fa-check-square-o"></i> {{trans('table.ok')}}</button>
-                        <a href="{{ route($type.'.index') }}" class="btn btn-warning"><i
+                        <a href="{{ route($type.'./client/index') }}" class="btn btn-warning"><i
                                     class="fa fa-arrow-left"></i> {{trans('table.back')}}</a>
                     </div>
                 </div>
                 <!-- ./ form actions -->
             </div>
         </div>
-
 
         {!! Form::close() !!}
     </div>

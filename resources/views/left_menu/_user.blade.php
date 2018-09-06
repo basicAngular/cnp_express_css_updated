@@ -1,4 +1,41 @@
-<div class="nav_profile">
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <a href="javascript:;" class="responsiveMenu" id="respNav"><i class="fa fa-bars"></i> Menu</a>
+        <ul class="list-inline menuList navigation">
+            <li {!! (Request::is( '/') ? 'class="active"' : '') !!}>
+                <a href="{{url('/')}}">
+                <span class="nav-icon"><i class="material-icons">dashboard</i></span>
+                    <span class="nav-text"> {{trans('left_menu.dashboard')}}</span>
+                </a>
+            </li>
+
+
+
+            <li class="has-child"><a href="#">Tradeline Approval</a>
+                <ul class="sub-menu">
+                    <li><a href="#">Sub Menu 1</a></li>
+                    <li><a href="#">Sub Menu 2</a></li>
+                    <li><a href="#">Sub Menu 3</a></li>
+                    <li><a href="#">Sub Menu 4</a></li>
+                </ul>
+            </li>
+            <li class="has-child"><a href="#">My Client</a>
+                <ul class="sub-menu">
+                    <li><a href="#">Sub Menu 1</a></li>
+                    <li><a href="#">Sub Menu 2</a></li>
+                    <li><a href="#">Sub Menu 3</a></li>
+                    <li><a href="#">Sub Menu 4</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Client Information</a></li>
+            <li><a href="#">Task</a></li>
+            <li><a href="#">Broker Information</a></li>
+        </ul>
+    </div><!-- col 12 -->
+</div><!-- row -->
+
+
+{{--<div class="nav_profile">
     <div class="media profile-left">
         <a class="pull-left profile-thumb" href="{{url('/profile')}}">
             @if($user_data->user_avatar)
@@ -36,7 +73,8 @@
             </ul>
         </div>
     </div>
-</div>
+</div>--}}
+{{--
 <ul class="navigation">
     <li {!! (Request::is( '/') ? 'class="active"' : '') !!}>
         <a href="{{url('/')}}">
@@ -46,7 +84,7 @@
             <span class="nav-text"> {{trans('left_menu.dashboard')}}</span>
         </a>
     </li>
-    {{--@if(isset($user_data) && ($user_data->hasAccess(['opportunities.read']) || $user_data->inRole('admin')))
+    --}}{{--@if(isset($user_data) && ($user_data->hasAccess(['opportunities.read']) || $user_data->inRole('admin')))
     <li {!! (Request::is( 'opportunity*') || Request::is( 'opportunity') ? 'class="active"' : '') !!}>
         <a href="{{url('opportunity')}}">
             <span class="nav-icon">
@@ -55,7 +93,7 @@
             <span class="nav-text">{{trans('left_menu.opportunities')}}</span>
         </a>
     </li>
-    @endif--}}
+    @endif--}}{{--
 
     @if(isset($user_data) && ($user_data->hasAccess(['leads.read']) || $user_data->inRole('admin')))
     <li {!! (Request::is( 'lead*') || Request::is( 'leadcall/*') || Request::is( 'lead') ? 'class="active"' : '') !!}>
@@ -300,4 +338,4 @@
             </a>
         </li>
     @endif
-</ul>
+</ul>--}}

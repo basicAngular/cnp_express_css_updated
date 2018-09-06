@@ -33,11 +33,16 @@ return [
     "support" => "Support",
     "price" => "Price",
     "payplan" => "Pay plans",
-    "email_template" => "Email templates",
+    "email_template" => "Email template",
     "options" => "Options",
     "tasks" => "Tasks",
     "client" => "Client",
     "companies" => "Companies",
     "agent" => "Agent",
-    "backup" => "Backup"
+    "backup" => "Backup",
+    "user" => "user",
+    "admin" => "admin",
+    "broker" => "broker",
+    "client" => "client",
+    "setting" => "setting"
 ];

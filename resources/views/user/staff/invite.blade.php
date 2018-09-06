@@ -9,7 +9,7 @@
     <div class="panel panel-primary">
         <div class="panel-body">
             @include('flash::message')
-            {!! Form::open(['url' => $type.'/invite', 'method' => 'post', 'files'=> true]) !!}
+            {!! Form::open(['url' => $type.'/staff/invite', 'method' => 'post', 'files'=> true]) !!}
             <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
                 {!! Form::label('email', trans('staff.emails'), ['class' => 'control-label']) !!}
                 <div class="controls">

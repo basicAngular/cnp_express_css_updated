@@ -238,7 +238,6 @@ class AuthController extends Controller
         }
 
         $this->generateMessagesFields();
-
         $title = trans('auth.user_profile');
         $user_data = User::find(Sentinel::getUser()->id);
         return view('profile', compact('title', 'user_data'));

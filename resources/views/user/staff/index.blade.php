@@ -11,11 +11,13 @@
         <div class="pull-right">
             @if($user_data->hasAccess(['staff.write']) || $user_data->inRole('admin'))
                 <a href="{{ $type.'/create' }}" class="btn btn-primary">
-                    <i class="fa fa-plus-circle"></i> {{ trans('staff.create_staff') }}</a>
+                    <i class="fa fa-plus-circle"></i> {{ trans('staff.create_staff') }}
+                </a>
             @endif
             @if($user_data->inRole('admin'))
                 <a href="{{ $type.'/invite' }}" class="btn btn-warning">
-                    <i class="fa fa-envelope"></i> {{ trans('staff.invite') }}</a>
+                    <i class="fa fa-envelope"></i> {{ trans('staff.invite') }}
+                </a>
             @endif
         </div>
     </div>
@@ -25,10 +27,10 @@
                 <i class="material-icons">people_outline</i>
                 {{ $title }}
             </h4>
-                                <span class="pull-right">
-                                    <i class="fa fa-fw fa-chevron-up clickable"></i>
-                                    <i class="fa fa-fw fa-times removepanel clickable"></i>
-                                </span>
+            <span class="pull-right">
+                <i class="fa fa-fw fa-chevron-up clickable"></i>
+                <i class="fa fa-fw fa-times removepanel clickable"></i>
+            </span>
         </div>
         <div class="panel-body">
             <div class="table-responsive">

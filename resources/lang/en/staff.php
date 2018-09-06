@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     "staffs" => "Staff",
     "new" => "New staff",
     "edit" => "Edit staff",
@@ -49,5 +48,11 @@ return [
     'cancel_invitation' => 'Cancel Invitation',
     'invite_cancel' => 'Cancel Invitation',
     'invalid-email' => 'Check your Site Email Address',
-
+    'user' => 'User',
+    'admin' => 'Admin',
+    'client' => 'Client',
+    'broker' => 'Broker',
+    'add_admin' => 'Add Admin',
+    'add_client' => 'Add Client',
+    'add' => 'add_broker',
 ];

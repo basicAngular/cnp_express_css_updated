@@ -43,6 +43,7 @@ Route::group(array('middleware' => ['sentinel', 'admin', 'xss_protection'], 'nam
 
     Route::group(['prefix' => 'option'], function () {
         Route::get('data/{slug2}', 'OptionController@data');
+
         Route::get('data', 'OptionController@data');
         Route::get('{option}/show', 'OptionController@show');
         Route::get('{option}/delete', 'OptionController@delete');
@@ -233,24 +234,27 @@ Route::group(array('middleware' => ['sentinel', 'authorized', 'xss_protection'],
     Route::resource('product', 'ProductController');
 
     Route::group(['prefix' => 'staff'], function () {
-        Route::get('data', 'StaffController@data');
+        Route::get('data/{user_type}', 'StaffController@data');
+
+        Route::get('adminData', 'StaffController@adminData');
+        Route::get('brokerData', 'StaffController@brokerData');
+        Route::get('clientData', 'StaffController@clientData');
+
         Route::get('{staff}/show', 'StaffController@show');
         Route::get('{staff}/delete', 'StaffController@delete');
-        Route::get('invite', 'StaffController@invite');
-        Route::post('invite', 'StaffController@inviteSave');
+        Route::get('staff/invite', 'StaffController@invite');
+        Route::post('staff/invite', 'StaffController@inviteSave');
         Route::get('invite/{id}/cancel', 'StaffController@inviteCancel');
         Route::post('invite/{id}/cancel-invite','StaffController@inviteCancelConfirm');
 
-        // Code added by varun
+        // Codeed by varun
         Route::get('broker','StaffController@broker');
         Route::get('admin','StaffController@admin');
         Route::get('client','StaffController@client');
-        // Code 04-09-2018 : 11.17 PM
-        Route::get('adminData/{userType}', 'staffController@adminData');
 
-        Route::get('add-admin','StaffController@addAdmin');
-        Route::get('add-broker','StaffController@addBroker');
-        Route::get('add-client','StaffController@addClient');
+        Route::get('staff/add-admin','StaffController@addAdmin');
+        Route::get('staff/add-broker','StaffController@addBroker');
+        Route::get('staff/add-client','StaffController@addClient');
     });;
 
     Route::resource('staff', 'StaffController');

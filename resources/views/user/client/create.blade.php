@@ -10,7 +10,7 @@
     <div class="page-header clearfix">
     </div>
     <!-- ./ notifications -->
-    @include('user/'.$type.'/_form')
+    @include('user/client/_form')
 @stop
 
 @section('scripts')

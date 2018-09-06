@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="add28564-224b-42b3-9cdb-33ad32498e43" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Users/StaffController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Users/StaffController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/en/staff.php" afterPath="$PROJECT_DIR$/resources/lang/en/staff.php" />
     </list>
     <ignored path="cnp_express_css_updated.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,35 +24,7 @@
     <favorites_list name="cnp_express_css_updated" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="StaffController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Users/StaffController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="523">
-              <caret line="157" column="34" selection-start-line="157" selection-start-column="34" selection-end-line="157" selection-end-column="34" />
-              <folding>
-                <marker date="1536224476943" expanded="true" signature="8034:8131" ph="..." />
-                <marker date="1536224476943" expanded="true" signature="8303:8398" ph="..." />
-                <marker date="1536224476943" expanded="true" signature="8672:8767" ph="..." />
-                <marker date="1536224476943" expanded="true" signature="10052:10149" ph="..." />
-                <marker date="1536224476943" expanded="true" signature="10321:10416" ph="..." />
-                <marker date="1536224476943" expanded="true" signature="10690:10785" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="staff.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/lang/en/staff.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="50" column="12" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -60,6 +33,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/Http/Controllers/Users/StaffController.php" />
+        <option value="$PROJECT_DIR$/resources/lang/en/staff.php" />
       </list>
     </option>
   </component>
@@ -113,30 +87,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cnp_express_css_updated" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cnp_express_css_updated" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cnp_express_css_updated" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cnp_express_css_updated" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="routes" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -146,7 +96,7 @@
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.file-colors" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="staff&#9;FILE&#9;file:///home/yogeshvishwakarma/DayUsers/YogeshV/cnp/cnp_express_css_updated/resources/lang/en/staff.php" />
+    <property name="SearchEverywhereHistoryKey" value="staff&#9;FILE&#9;file:///home/yogeshvishwakarma/DayUsers/YogeshV/cnp/cnp_express_css_updated/app/Http/Controllers/Users/StaffController.php&#10;staf&#9;FILE&#9;file:///home/yogeshvishwakarma/DayUsers/YogeshV/cnp/cnp_express_css_updated/resources/lang/en/staff.php&#10;admin/index.&#9;FILE&#9;file:///home/yogeshvishwakarma/DayUsers/YogeshV/cnp/cnp_express_css_updated/resources/views/user/admin/index.blade.php" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -161,19 +111,19 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1536205699211</updated>
-      <workItem from="1536205712506" duration="3339000" />
+      <workItem from="1536205712506" duration="5326000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3339000" />
+    <option name="totallyTimeSpent" value="5326000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="24" width="1311" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991317" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24467245" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24467245" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.366322" sideWeight="0.50276244" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991317" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -204,25 +154,33 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/resources/views/user/admin/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/lang/en/staff.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="50" column="12" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="12" />
+        <state relative-caret-position="144">
+          <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Users/StaffController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="157" column="34" selection-start-line="157" selection-start-column="34" selection-end-line="157" selection-end-column="34" />
+        <state relative-caret-position="234">
+          <caret line="73" column="36" selection-start-line="73" selection-start-column="36" selection-end-line="73" selection-end-column="36" />
           <folding>
-            <marker date="1536224476943" expanded="true" signature="8034:8131" ph="..." />
-            <marker date="1536224476943" expanded="true" signature="8303:8398" ph="..." />
-            <marker date="1536224476943" expanded="true" signature="8672:8767" ph="..." />
-            <marker date="1536224476943" expanded="true" signature="10052:10149" ph="..." />
-            <marker date="1536224476943" expanded="true" signature="10321:10416" ph="..." />
-            <marker date="1536224476943" expanded="true" signature="10690:10785" ph="..." />
+            <marker date="1536225456651" expanded="true" signature="8019:8116" ph="..." />
+            <marker date="1536225456651" expanded="true" signature="8288:8383" ph="..." />
+            <marker date="1536225456651" expanded="true" signature="8657:8752" ph="..." />
+            <marker date="1536225456651" expanded="true" signature="10037:10134" ph="..." />
+            <marker date="1536225456651" expanded="true" signature="10306:10401" ph="..." />
+            <marker date="1536225456651" expanded="true" signature="10675:10770" ph="..." />
           </folding>
         </state>
       </provider>

@@ -34,10 +34,8 @@ class StaffController extends UserController
      * @param UserRepository $userRepository
      * @param InviteUserRepository $inviteUserRepository
      */
-    public function __construct(UserRepository $userRepository,
-            InviteUserRepository $inviteUserRepository)
+    public function __construct(UserRepository $userRepository, InviteUserRepository $inviteUserRepository)
     {
-
         $this->middleware('authorized:staff.read', ['only' => ['index', 'data']]);
         $this->middleware('authorized:staff.write', ['only' => ['create', 'store', 'update', 'edit']]);
         $this->middleware('authorized:staff.delete', ['only' => ['delete']]);
@@ -65,44 +63,40 @@ class StaffController extends UserController
 
     public function admin()
     {
-        //$title = trans('admin.admin');
-        $title = 'Admin';
+        $title = trans('staff.admin');
         return view('user.admin.index', compact('title'));
     }
 
     public function client()
     {
-        $title = 'Client';
+        $title = trans('staff.client');
         return view('user.client.index', compact('title'));
     }
 
     public function broker()
     {
-        $title = 'Broker';
+        $title = trans('staff.broker');
         return view('user.broker.index', compact('title'));
     }
     
     /*add admin*/
     public function addAdmin()
     {
-        //$title = trans('staff.new');
-        $title = 'Add Admin';
+        $title = trans('staff.add_admin');
         return view('user.admin.create', compact('title'));
     }
 
     /*add broker */
     public function addBroker()
     {
-        //$title = trans('staff.new');
-        $title = 'Add Broker';
+        $title = trans('staff.add_broker');
         return view('user.broker.create', compact('title'));
     }
 
     /*create client */
     public function addClient()
     {
-        //$title = trans('staff.new');
-        $title = 'Add Client';
+        $title = trans('staff.add_client');
         return view('user.client.create', compact('title'));
     }
 
@@ -128,18 +122,26 @@ class StaffController extends UserController
         if ($request->hasFile('user_avatar_file')) {
             $file = $request->file('user_avatar_file');
             $file = $this->userRepository->uploadAvatar($file);
+
             $request->merge([
                 'user_avatar' => $file->getFileInfo()->getFilename(),
             ]);
+
             $this->generateThumbnail($file);
         }
+
         $user = Sentinel::registerAndActivate($request->only('first_name', 'last_name', 'email', 'password'));
+
         $role = Sentinel::findRoleBySlug('staff');
+
         $role->users()->attach($user);
+
         $user = $this->userRepository->find($user->id);
+
         foreach ($request->get('permissions', []) as $permission) {
             $user->addPermission($permission);
         }
+
         $user->user_id = $this->user->id;
         $user->phone_number = $request->phone_number;
         $user->user_avatar = $request->user_avatar;
@@ -148,7 +150,7 @@ class StaffController extends UserController
         if ($request->user_type =='1') {
             return redirect("staff/admin");
         }
-        elseif ($request->user_type =='2') {
+        elseif($request->user_type =='2') {
             return redirect("staff/broker");
         }
         elseif ($request->user_type =='3') {
@@ -157,6 +159,7 @@ class StaffController extends UserController
         else {
             return redirect("staff");
         }
+
     }
 
 
@@ -209,7 +212,6 @@ class StaffController extends UserController
         $staff->email = $request->email;
         $staff->user_avatar = $request->user_avatar;
         $staff->save();
-
         return redirect("staff");
     }
 
@@ -238,13 +240,14 @@ class StaffController extends UserController
         return redirect('staff');
     }
 
-    public function data(Datatables $datatables)
+
+    public function adminData(Datatables $datatables)
     {
         $dateFormat = config('settings.date_format');
-        $staffs = $this->userRepository->getAllNew()->with('staffSalesTeam')
+        $staffs = $this->userRepository->getUserByUserType(1)->with('staffSalesTeam')
             ->get()
             ->filter(function ($user) {
-                return ($user->inRole('staff') && $user->id!=$this->user->id && $user->user_type =1);
+                return ($user->inRole('staff') && $user->id!=$this->user->id);
             })->map(function ($user) use ($dateFormat){
                 return [
                     'id' => $user->id,
@@ -271,15 +274,14 @@ class StaffController extends UserController
             ->rawColumns(['actions'])->make();
     }
 
-    public function adminData(Datatables $datatables, $userType)
-    {
-        return $userType;
 
+    public function brokerData(Datatables $datatables)
+    {
         $dateFormat = config('settings.date_format');
-        $staffs = $this->userRepository->getUserByType($userType)->with('staffSalesTeam')
+        $staffs = $this->userRepository->getUserByUserType(2)->with('staffSalesTeam')
             ->get()
             ->filter(function ($user) {
-                return ($user->inRole('staff') && $user->id!=$this->user->id && $user->user_type =1);
+                return ($user->inRole('staff') && $user->id!=$this->user->id);
             })->map(function ($user) use ($dateFormat){
                 return [
                     'id' => $user->id,
@@ -290,7 +292,75 @@ class StaffController extends UserController
                 ];
             });
 
-           return $datatables->collection($staffs)
+        return $datatables->collection($staffs)
+            ->addColumn('actions', '@if(Sentinel::getUser()->hasAccess([\'staff.write\']) || Sentinel::inRole(\'admin\'))
+                                        <a href="{{ url(\'staff/\' . $id . \'/edit\' ) }}" title="{{ trans(\'table.edit\') }}">
+                                            <i class="fa fa-fw fa-pencil text-warning"></i> </a>
+                                     @endif
+                                     <a href="{{ url(\'staff/\' . $id . \'/show\' ) }}" title="{{ trans(\'table.details\') }}" >
+                                            <i class="fa fa-fw fa-eye text-primary"></i> </a>
+                                     @if(Sentinel::getUser()->hasAccess([\'staff.delete\']) || Sentinel::inRole(\'admin\') && $count_uses==0)
+                                        <a href="{{ url(\'staff/\' . $id . \'/delete\' ) }}" title="{{ trans(\'table.delete\') }}">
+                                            <i class="fa fa-fw fa-trash text-danger"></i> </a>
+                                      @endif')
+            ->removeColumn('id')
+            ->removeColumn('count_uses')
+            ->rawColumns(['actions'])->make();
+    }
+
+    public function clientData(Datatables $datatables)
+    {
+        $dateFormat = config('settings.date_format');
+        $staffs = $this->userRepository->getUserByUserType(3)->with('staffSalesTeam')
+            ->get()
+            ->filter(function ($user) {
+                return ($user->inRole('staff') && $user->id!=$this->user->id);
+            })->map(function ($user) use ($dateFormat){
+                return [
+                    'id' => $user->id,
+                    'full_name' => $user->full_name,
+                    'email' => $user->email,
+                    'created_at' => date($dateFormat,strtotime($user->created_at)),
+                    'count_uses' => $user->staffSalesTeam->count()
+                ];
+            });
+
+        return $datatables->collection($staffs)
+            ->addColumn('actions', '@if(Sentinel::getUser()->hasAccess([\'staff.write\']) || Sentinel::inRole(\'admin\'))
+                                        <a href="{{ url(\'staff/\' . $id . \'/edit\' ) }}" title="{{ trans(\'table.edit\') }}">
+                                            <i class="fa fa-fw fa-pencil text-warning"></i> </a>
+                                     @endif
+                                     <a href="{{ url(\'staff/\' . $id . \'/show\' ) }}" title="{{ trans(\'table.details\') }}" >
+                                            <i class="fa fa-fw fa-eye text-primary"></i> </a>
+                                     @if(Sentinel::getUser()->hasAccess([\'staff.delete\']) || Sentinel::inRole(\'admin\') && $count_uses==0)
+                                        <a href="{{ url(\'staff/\' . $id . \'/delete\' ) }}" title="{{ trans(\'table.delete\') }}">
+                                            <i class="fa fa-fw fa-trash text-danger"></i> </a>
+                                      @endif')
+            ->removeColumn('id')
+            ->removeColumn('count_uses')
+            ->rawColumns(['actions'])->make();
+    }
+
+    
+    
+    public function data(Datatables $datatables)
+    {
+        $dateFormat = config('settings.date_format');
+        $staffs = $this->userRepository->getAllNew()->with('staffSalesTeam')
+            ->get()
+            ->filter(function ($user) {
+                return ($user->inRole('staff') && $user->id!=$this->user->id);
+            })->map(function ($user) use ($dateFormat){
+                return [
+                    'id' => $user->id,
+                    'full_name' => $user->full_name,
+                    'email' => $user->email,
+                    'created_at' => date($dateFormat,strtotime($user->created_at)),
+                    'count_uses' => $user->staffSalesTeam->count()  
+                ];
+            });
+
+        return $datatables->collection($staffs)
             ->addColumn('actions', '@if(Sentinel::getUser()->hasAccess([\'staff.write\']) || Sentinel::inRole(\'admin\'))
                                         <a href="{{ url(\'staff/\' . $id . \'/edit\' ) }}" title="{{ trans(\'table.edit\') }}">
                                             <i class="fa fa-fw fa-pencil text-warning"></i> </a>

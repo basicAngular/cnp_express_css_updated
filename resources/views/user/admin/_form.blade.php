@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group {{ $errors->has('user_avatar_file') ? 'has-error' : '' }}">
-                    {!! Form::label('user_avatar_file', trans('broker.user_avatar'), ['class' => 'control-label']) !!}
+                    {!! Form::label('user_avatar_file', trans('staff.user_avatar'), ['class' => 'control-label']) !!}
                     <div class="controls row" v-image-preview>
                         <div class="col-sm-6">
                             <div class="fileinput fileinput-new" data-provides="fileinput">
@@ -38,7 +38,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group {{ $errors->has('first_name') ? 'has-error' : '' }}">
-                    {!! Form::label('first_name', trans('broker.first_name'), ['class' => 'control-label required']) !!}
+                    {!! Form::label('first_name', trans('staff.first_name'), ['class' => 'control-label required']) !!}
                     <div class="controls">
                         {!! Form::text('first_name', null, ['class' => 'form-control']) !!}
                         {!! Form::hidden('user_type',1) !!}
@@ -48,7 +48,7 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group {{ $errors->has('last_name') ? 'has-error' : '' }}">
-                    {!! Form::label('last_name', trans('broker.last_name'), ['class' => 'control-label required']) !!}
+                    {!! Form::label('last_name', trans('staff.last_name'), ['class' => 'control-label required']) !!}
                     <div class="controls">
                         {!! Form::text('last_name', null, ['class' => 'form-control']) !!}
                         <span class="help-block">{{ $errors->first('last_name', ':message') }}</span>
@@ -59,7 +59,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group {{ $errors->has('phone_number') ? 'has-error' : '' }}">
-                    {!! Form::label('phone_number', trans('broker.phone_number'), ['class' => 'control-label required']) !!}
+                    {!! Form::label('phone_number', trans('staff.phone_number'), ['class' => 'control-label required']) !!}
                     <div class="controls">
                         {!! Form::text('phone_number', null, ['class' => 'form-control','data-fv-integer' => 'true']) !!}
                         <span class="help-block">{{ $errors->first('phone_number', ':message') }}</span>
@@ -68,7 +68,7 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
-                    {!! Form::label('email', trans('broker.email'), ['class' => 'control-label required']) !!}
+                    {!! Form::label('email', trans('staff.email'), ['class' => 'control-label required']) !!}
                     <div class="controls">
                         {!! Form::email('email', null, ['class' => 'form-control']) !!}
                         <span class="help-block">{{ $errors->first('email', ':message') }}</span>
@@ -80,7 +80,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
-                            {!! Form::label('password', trans('broker.password'), ['class' => 'control-label required']) !!}
+                            {!! Form::label('password', trans('staff.password'), ['class' => 'control-label required']) !!}
                             <div class="controls">
                                 {!! Form::password('password', ['class' => 'form-control']) !!}
                                 <span class="help-block">{{ $errors->first('password', ':message') }}</span>
@@ -89,7 +89,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group {{ $errors->has('password_confirmation') ? 'has-error' : '' }}">
-                            {!! Form::label('password_confirmation', trans('broker.password_confirmation'), ['class' => 'control-label required']) !!}
+                            {!! Form::label('password_confirmation', trans('staff.password_confirmation'), ['class' => 'control-label required']) !!}
                             <div class="controls">
                                 {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
                                 <span class="help-block">{{ $errors->first('password_confirmation', ':message') }}</span>
@@ -102,7 +102,7 @@
                 <div class="row password_fields">
                     <div class="col-md-6">
                         <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
-                            {!! Form::label('password', trans('broker.password'), ['class' => 'control-label required']) !!}
+                            {!! Form::label('password', trans('staff.password'), ['class' => 'control-label required']) !!}
                             <div class="controls">
                                 {!! Form::password('password', ['class' => 'form-control']) !!}
                                 <span class="help-block">{{ $errors->first('password', ':message') }}</span>
@@ -111,7 +111,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group {{ $errors->has('password_confirmation') ? 'has-error' : '' }}">
-                            {!! Form::label('password_confirmation', trans('broker.password_confirmation'), ['class' => 'control-label required']) !!}
+                            {!! Form::label('password_confirmation', trans('staff.password_confirmation'), ['class' => 'control-label required']) !!}
                             <div class="controls">
                                 {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
                                 <span class="help-block">{{ $errors->first('password_confirmation', ':message') }}</span>
@@ -126,222 +126,222 @@
             <div class="col-md-12">
                 <hr>
                 <div class="panel-content">
-                    <h4>{{trans('broker.permissions')}}</h4>
+                    <h4>{{trans('staff.permissions')}}</h4>
                     <div class="row">
                         <div class="col-sm-4 col-lg-2">
-                            <h5 class="m-t-20">{{trans('broker.sales_teams')}}</h5>
+                            <h5 class="m-t-20">{{trans('staff.sales_teams')}}</h5>
                             <div class="input-group">
                                 <label>
                                     <input type="checkbox" name="permissions[]" value="sales_team.read"
                                            class='icheckgreen'
                                            @if(isset($broker) && $broker->hasAccess(['sales_team.read'])) checked @endif>
-                                    {{trans('broker.read')}} </label>
+                                    {{trans('staff.read')}} </label>
                                 <label>
                                     <input type="checkbox" name="permissions[]" value="sales_team.write"
                                            class='icheckblue'
                                            @if(isset($broker) && $broker->hasAccess(['sales_team.write'])) checked @endif>
-                                    {{trans('broker.write')}} </label>
+                                    {{trans('staff.write')}} </label>
                                 <label>
                                     <input type="checkbox" name="permissions[]" value="sales_team.delete"
                                            class='icheckred'
                                            @if(isset($broker) && $broker->hasAccess(['sales_team.delete'])) checked @endif>
-                                    {{trans('broker.delete')}} </label>
+                                    {{trans('staff.delete')}} </label>
                             </div>
                         </div>
                         <div class="col-sm-4 col-lg-2">
-                            <h5 class="m-t-20">{{trans('broker.leads')}}</h5>
+                            <h5 class="m-t-20">{{trans('staff.leads')}}</h5>
                             <div class="input-group">
                                 <label>
                                     <input type="checkbox" name="permissions[]" value="leads.read" class='icheckgreen'
                                            @if(isset($broker) && $broker->hasAccess(['leads.read'])) checked @endif>
-                                    {{trans('broker.read')}} </label>
+                                    {{trans('staff.read')}} </label>
                                 <label>
                                     <input type="checkbox" name="permissions[]" value="leads.write" class='icheckblue'
                                            @if(isset($broker) && $broker->hasAccess(['leads.write'])) checked @endif>
-                                    {{trans('broker.write')}} </label>
+                                    {{trans('staff.write')}} </label>
                                 <label>
                                     <input type="checkbox" name="permissions[]" value="leads.delete" class='icheckred'
                                            @if(isset($broker) && $broker->hasAccess(['leads.delete'])) checked @endif>
-                                    {{trans('broker.delete')}} </label>
+                                    {{trans('staff.delete')}} </label>
                             </div>
                         </div>
                         <div class="col-sm-4 col-lg-2">
-                            <h5 class="m-t-20">{{trans('broker.opportunities')}}</h5>
+                            <h5 class="m-t-20">{{trans('staff.opportunities')}}</h5>
                             <div class="input-group">
                                 <label>
                                     <input type="checkbox" name="permissions[]" value="opportunities.read"
                                            class='icheckgreen'
                                            @if(isset($broker) && $broker->hasAccess(['opportunities.read'])) checked @endif>
-                                    {{trans('broker.read')}} </label>
+                                    {{trans('staff.read')}} </label>
                                 <label>
                                     <input type="checkbox" name="permissions[]" value="opportunities.write"
                                            class='icheckblue'
                                            @if(isset($broker) && $broker->hasAccess(['opportunities.write'])) checked @endif>
-                                    {{trans('broker.write')}} </label>
+                                    {{trans('staff.write')}} </label>
                                 <label>
                                     <input type="checkbox" name="permissions[]" value="opportunities.delete"
                                            class='icheckred'
                                            @if(isset($broker) && $broker->hasAccess(['opportunities.delete'])) checked @endif>
-                                    {{trans('broker.delete')}} </label>
+                                    {{trans('staff.delete')}} </label>
                             </div>
                         </div>
                         <div class="col-sm-4 col-lg-2">
-                            <h5 class="m-t-20">{{trans('broker.logged_calls')}}</h5>
+                            <h5 class="m-t-20">{{trans('staff.logged_calls')}}</h5>
                             <div class="input-group">
                                 <label>
                                     <input type="checkbox" name="permissions[]" value="logged_calls.read"
                                            class='icheckgreen'
                                            @if(isset($broker) && $broker->hasAccess(['logged_calls.read'])) checked @endif>
-                                    {{trans('broker.read')}} </label>
+                                    {{trans('staff.read')}} </label>
                                 <label>
                                     <input type="checkbox" name="permissions[]" value="logged_calls.write"
                                            class='icheckblue'
                                            @if(isset($broker) && $broker->hasAccess(['logged_calls.write'])) checked @endif>
-                                    {{trans('broker.write')}} </label>
+                                    {{trans('staff.write')}} </label>
                                 <label>
                                     <input type="checkbox" name="permissions[]" value="logged_calls.delete"
                                            class='icheckred'
                                            @if(isset($broker) && $broker->hasAccess(['logged_calls.delete'])) checked @endif>
-                                    {{trans('broker.delete')}} </label>
+                                    {{trans('staff.delete')}} </label>
                             </div>
                         </div>
                         <div class="col-sm-4 col-lg-2">
-                            <h5 class="m-t-20">{{trans('broker.meetings')}}</h5>
+                            <h5 class="m-t-20">{{trans('staff.meetings')}}</h5>
                             <div class="input-group">
                                 <label>
                                     <input type="checkbox" name="permissions[]" value="meetings.read"
                                            class='icheckgreen'
                                            @if(isset($broker) && $broker->hasAccess(['meetings.read'])) checked @endif>
-                                    {{trans('broker.read')}} </label>
+                                    {{trans('staff.read')}} </label>
                                 <label>
                                     <input type="checkbox" name="permissions[]" value="meetings.write"
                                            class='icheckblue'
                                            @if(isset($broker) && $broker->hasAccess(['meetings.write'])) checked @endif>
-                                    {{trans('broker.write')}} </label>
+                                    {{trans('staff.write')}} </label>
                                 <label>
                                     <input type="checkbox" name="permissions[]" value="meetings.delete"
                                            class='icheckred'
                                            @if(isset($broker) && $broker->hasAccess(['meetings.delete'])) checked @endif>
-                                    {{trans('broker.delete')}} </label>
+                                    {{trans('staff.delete')}} </label>
                             </div>
                         </div>
                         <div class="col-sm-4 col-lg-2">
-                            <h5 class="m-t-20">{{trans('broker.products')}}</h5>
+                            <h5 class="m-t-20">{{trans('staff.products')}}</h5>
                             <div class="input-group">
                                 <label>
                                     <input type="checkbox" name="permissions[]" value="products.read"
                                            class='icheckgreen'
                                            @if(isset($broker) && $broker->hasAccess(['products.read'])) checked @endif>
-                                    {{trans('broker.read')}} </label>
+                                    {{trans('staff.read')}} </label>
                                 <label>
                                     <input type="checkbox" name="permissions[]" value="products.write"
                                            class='icheckblue'
                                            @if(isset($broker) && $broker->hasAccess(['products.write'])) checked @endif>
-                                    {{trans('broker.write')}} </label>
+                                    {{trans('staff.write')}} </label>
                                 <label>
                                     <input type="checkbox" name="permissions[]" value="products.delete"
                                            class='icheckred'
                                            @if(isset($broker) && $broker->hasAccess(['products.delete'])) checked @endif>
-                                    {{trans('broker.delete')}} </label>
+                                    {{trans('staff.delete')}} </label>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-4 col-lg-2">
-                            <h5 class="m-t-20">{{trans('broker.quotations')}}</h5>
+                            <h5 class="m-t-20">{{trans('staff.quotations')}}</h5>
                             <div class="input-group">
                                 <label>
                                     <input type="checkbox" name="permissions[]" value="quotations.read"
                                            class='icheckgreen'
                                            @if(isset($broker) && $broker->hasAccess(['quotations.read'])) checked @endif>
-                                    {{trans('broker.read')}} </label>
+                                    {{trans('staff.read')}} </label>
                                 <label>
                                     <input type="checkbox" name="permissions[]" value="quotations.write"
                                            class='icheckblue'
                                            @if(isset($broker) && $broker->hasAccess(['quotations.write'])) checked @endif>
-                                    {{trans('broker.write')}} </label>
+                                    {{trans('staff.write')}} </label>
                                 <label>
                                     <input type="checkbox" name="permissions[]" value="quotations.delete"
                                            class='icheckred'
                                            @if(isset($broker) && $broker->hasAccess(['quotations.delete'])) checked @endif>
-                                    {{trans('broker.delete')}} </label>
+                                    {{trans('staff.delete')}} </label>
                             </div>
                         </div>
                         <div class="col-sm-4 col-lg-2">
-                            <h5 class="m-t-20">{{trans('broker.sales_orders')}}</h5>
+                            <h5 class="m-t-20">{{trans('staff.sales_orders')}}</h5>
                             <div class="input-group">
                                 <label>
                                     <input type="checkbox" name="permissions[]" value="sales_orders.read"
                                            class='icheckgreen'
                                            @if(isset($broker) && $broker->hasAccess(['sales_orders.read'])) checked @endif>
-                                    {{trans('broker.read')}} </label>
+                                    {{trans('staff.read')}} </label>
                                 <label>
                                     <input type="checkbox" name="permissions[]" value="sales_orders.write"
                                            class='icheckblue'
                                            @if(isset($broker) && $broker->hasAccess(['sales_orders.write'])) checked @endif>
-                                    {{trans('broker.write')}} </label>
+                                    {{trans('staff.write')}} </label>
                                 <label>
                                     <input type="checkbox" name="permissions[]" value="sales_orders.delete"
                                            class='icheckred'
                                            @if(isset($broker) && $broker->hasAccess(['sales_orders.delete'])) checked @endif>
-                                    {{trans('broker.delete')}} </label>
+                                    {{trans('staff.delete')}} </label>
                             </div>
                         </div>
                         <div class="col-sm-4 col-lg-2">
-                            <h5 class="m-t-20">{{trans('broker.invoices')}}</h5>
+                            <h5 class="m-t-20">{{trans('staff.invoices')}}</h5>
                             <div class="input-group">
                                 <label>
                                     <input type="checkbox" name="permissions[]" value="invoices.read"
                                            class='icheckgreen'
                                            @if(isset($broker) && $broker->hasAccess(['invoices.read'])) checked @endif>
-                                    {{trans('broker.read')}} </label>
+                                    {{trans('staff.read')}} </label>
                                 <label>
                                     <input type="checkbox" name="permissions[]" value="invoices.write"
                                            class='icheckblue'
                                            @if(isset($broker) && $broker->hasAccess(['invoices.write'])) checked @endif>
-                                    {{trans('broker.write')}} </label>
+                                    {{trans('staff.write')}} </label>
                                 <label>
                                     <input type="checkbox" name="permissions[]" value="invoices.delete"
                                            class='icheckred'
                                            @if(isset($broker) && $broker->hasAccess(['invoices.delete'])) checked @endif>
-                                    {{trans('broker.delete')}} </label>
+                                    {{trans('staff.delete')}} </label>
                             </div>
                         </div>
                         <div class="col-sm-4 col-lg-2">
-                            <h5 class="m-t-20">{{trans('broker.broker')}}</h5>
+                            <h5 class="m-t-20">{{trans('staff.broker')}}</h5>
                             <div class="input-group">
                                 <label>
                                     <input type="checkbox" name="permissions[]" value="broker.read" class='icheckgreen'
-                                           @if(isset($broker) && $broker->hasAccess(['broker.read'])) checked @endif>
-                                    {{trans('broker.read')}} </label>
+                                           @if(isset($broker) && $broker->hasAccess(['staff.read'])) checked @endif>
+                                    {{trans('staff.read')}} </label>
                                 <label>
                                     <input type="checkbox" name="permissions[]" value="broker.write" class='icheckblue'
-                                           @if(isset($broker) && $broker->hasAccess(['broker.write'])) checked @endif>
-                                    {{trans('broker.write')}} </label>
+                                           @if(isset($broker) && $broker->hasAccess(['staff.write'])) checked @endif>
+                                    {{trans('staff.write')}} </label>
                                 <label>
                                     <input type="checkbox" name="permissions[]" value="broker.delete" class='icheckred'
-                                           @if(isset($broker) && $broker->hasAccess(['broker.delete'])) checked @endif>
-                                    {{trans('broker.delete')}} </label>
+                                           @if(isset($broker) && $broker->hasAccess(['staff.delete'])) checked @endif>
+                                    {{trans('staff.delete')}} </label>
                             </div>
                         </div>
                         <div class="col-sm-4 col-lg-2">
-                            <h5 class="m-t-20">{{trans('broker.companies')}}</h5>
+                            <h5 class="m-t-20">{{trans('staff.companies')}}</h5>
                             <div class="input-group">
                                 <label>
                                     <input type="checkbox" name="permissions[]" value="contacts.read"
                                            class='icheckgreen'
                                            @if(isset($broker) && $broker->hasAccess(['contacts.read'])) checked @endif>
-                                    {{trans('broker.read')}} </label>
+                                    {{trans('staff.read')}} </label>
                                 <label>
                                     <input type="checkbox" name="permissions[]" value="contacts.write"
                                            class='icheckblue'
                                            @if(isset($broker) && $broker->hasAccess(['contacts.write'])) checked @endif>
-                                    {{trans('broker.write')}} </label>
+                                    {{trans('staff.write')}} </label>
                                 <label>
                                     <input type="checkbox" name="permissions[]" value="contacts.delete"
                                            class='icheckred'
                                            @if(isset($broker) && $broker->hasAccess(['contacts.delete'])) checked @endif>
-                                    {{trans('broker.delete')}} </label>
+                                    {{trans('staff.delete')}} </label>
                             </div>
                         </div>
                     </div>
@@ -357,7 +357,7 @@
 
                         <button type="submit" class="btn btn-success"><i
                                     class="fa fa-check-square-o"></i> {{trans('table.ok')}}</button>
-                        <a href="{{ route($type.'.index') }}" class="btn btn-warning"><i
+                        <a href="{{ url($type.'/admin') }}" class="btn btn-warning"><i
                                     class="fa fa-arrow-left"></i> {{trans('table.back')}}</a>
                     </div>
                 </div>

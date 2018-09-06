@@ -10,7 +10,7 @@
     <div class="page-header clearfix">
         <div class="pull-right">
             @if($user_data->hasAccess(['broker.write']) || $user_data->inRole('admin'))
-                <a href="{{ $type.'/create' }}" class="btn btn-primary">
+                <a href="{{ $type.'/add-client ' }}" class="btn btn-primary">
                     <i class="fa fa-plus-circle"></i> Create Client</a>
             @endif
             @if($user_data->inRole('admin'))
@@ -25,10 +25,10 @@
                 <i class="material-icons">people_outline</i>
                 {{ $title }}
             </h4>
-                                <span class="pull-right">
-                                    <i class="fa fa-fw fa-chevron-up clickable"></i>
-                                    <i class="fa fa-fw fa-times removepanel clickable"></i>
-                                </span>
+            <span class="pull-right">
+                <i class="fa fa-fw fa-chevron-up clickable"></i>
+                <i class="fa fa-fw fa-times removepanel clickable"></i>
+            </span>
         </div>
         <div class="panel-body">
             <div class="table-responsive">
@@ -66,7 +66,8 @@
                         {"data":"created_at"},
                         {"data":"actions"},
                     ],
-                    "ajax": "{{ url($type) }}" + ((typeof $('#data').attr('data-id') != "undefined") ? "/" + $('#id').val() + "/" + $('#data').attr('data-id') : "/data")
+                    "ajax": "{{ url($type) }}" + ((typeof $('#data').attr('data-id') != "undefined") ? "/" + $('#id')
+                            .val() + "/" + $('#data').attr('data-id') : "/clientData")
                 });
             });
         </script>
