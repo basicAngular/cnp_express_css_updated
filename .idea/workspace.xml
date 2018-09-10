@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="add28564-224b-42b3-9cdb-33ad32498e43" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Users/StaffController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Users/StaffController.php" />
     </list>
     <ignored path="cnp_express_css_updated.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,7 +24,41 @@
     <favorites_list name="cnp_express_css_updated" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="StaffController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Users/StaffController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="99" column="20" selection-start-line="99" selection-start-column="20" selection-end-line="99" selection-end-column="20" />
+              <folding>
+                <marker date="1536551520911" expanded="true" signature="7962:8059" ph="..." />
+                <marker date="1536551520911" expanded="true" signature="8231:8326" ph="..." />
+                <marker date="1536551520911" expanded="true" signature="8600:8695" ph="..." />
+                <marker date="1536551520911" expanded="true" signature="9914:10011" ph="..." />
+                <marker date="1536551520911" expanded="true" signature="10183:10278" ph="..." />
+                <marker date="1536551520911" expanded="true" signature="10552:10647" ph="..." />
+                <marker date="1536551520911" expanded="true" signature="11865:11962" ph="..." />
+                <marker date="1536551520911" expanded="true" signature="12134:12229" ph="..." />
+                <marker date="1536551520911" expanded="true" signature="12503:12598" ph="..." />
+                <marker date="1536551520911" expanded="true" signature="13813:13910" ph="..." />
+                <marker date="1536551520911" expanded="true" signature="14082:14177" ph="..." />
+                <marker date="1536551520911" expanded="true" signature="14451:14546" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="206">
+              <caret line="259" column="64" selection-start-line="259" selection-start-column="55" selection-end-line="259" selection-end-column="64" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -31,8 +66,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Users/StaffController.php" />
         <option value="$PROJECT_DIR$/resources/lang/en/staff.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Users/StaffController.php" />
       </list>
     </option>
   </component>
@@ -108,7 +143,7 @@
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.file-colors" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="staff&#9;FILE&#9;file:///home/yogeshvishwakarma/DayUsers/YogeshV/cnp/cnp_express_css_updated/app/Http/Controllers/Users/StaffController.php&#10;staf&#9;FILE&#9;file:///home/yogeshvishwakarma/DayUsers/YogeshV/cnp/cnp_express_css_updated/resources/lang/en/staff.php&#10;admin/index.&#9;FILE&#9;file:///home/yogeshvishwakarma/DayUsers/YogeshV/cnp/cnp_express_css_updated/resources/views/user/admin/index.blade.php" />
+    <property name="SearchEverywhereHistoryKey" value="web.php&#9;FILE&#9;file:///home/yogeshvishwakarma/DayUsers/YogeshV/cnp/cnp_express_css_updated/routes/web.php&#10;staff&#9;FILE&#9;file:///home/yogeshvishwakarma/DayUsers/YogeshV/cnp/cnp_express_css_updated/app/Http/Controllers/Users/StaffController.php&#10;staf&#9;FILE&#9;file:///home/yogeshvishwakarma/DayUsers/YogeshV/cnp/cnp_express_css_updated/resources/lang/en/staff.php&#10;admin/index.&#9;FILE&#9;file:///home/yogeshvishwakarma/DayUsers/YogeshV/cnp/cnp_express_css_updated/resources/views/user/admin/index.blade.php" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -125,25 +160,27 @@
       <updated>1536205699211</updated>
       <workItem from="1536205712506" duration="6219000" />
       <workItem from="1536292734978" duration="55000" />
+      <workItem from="1536301782597" duration="128000" />
+      <workItem from="1536551048397" duration="469000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6274000" />
+    <option name="totallyTimeSpent" value="8213000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="24" width="1311" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991317" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24861878" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25651145" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.366322" sideWeight="0.50276244" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991317" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32840237" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43574592" sideWeight="0.49723756" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43574592" sideWeight="0.49723756" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript Compiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32791728" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -189,10 +226,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="259" column="64" selection-start-line="259" selection-start-column="55" selection-end-line="259" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Users/StaffController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="73" column="36" selection-start-line="73" selection-start-column="36" selection-end-line="73" selection-end-column="36" />
+        <state relative-caret-position="216">
+          <caret line="99" column="20" selection-start-line="99" selection-start-column="20" selection-end-line="99" selection-end-column="20" />
+          <folding>
+            <marker date="1536551520911" expanded="true" signature="7962:8059" ph="..." />
+            <marker date="1536551520911" expanded="true" signature="8231:8326" ph="..." />
+            <marker date="1536551520911" expanded="true" signature="8600:8695" ph="..." />
+            <marker date="1536551520911" expanded="true" signature="9914:10011" ph="..." />
+            <marker date="1536551520911" expanded="true" signature="10183:10278" ph="..." />
+            <marker date="1536551520911" expanded="true" signature="10552:10647" ph="..." />
+            <marker date="1536551520911" expanded="true" signature="11865:11962" ph="..." />
+            <marker date="1536551520911" expanded="true" signature="12134:12229" ph="..." />
+            <marker date="1536551520911" expanded="true" signature="12503:12598" ph="..." />
+            <marker date="1536551520911" expanded="true" signature="13813:13910" ph="..." />
+            <marker date="1536551520911" expanded="true" signature="14082:14177" ph="..." />
+            <marker date="1536551520911" expanded="true" signature="14451:14546" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -96,6 +96,8 @@ class StaffController extends UserController
     /*create client */
     public function addClient()
     {
+
+        return 'hi';
         $title = trans('staff.add_client');
         return view('user.client.create', compact('title'));
     }
